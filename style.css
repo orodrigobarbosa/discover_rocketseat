@@ -1,0 +1,190 @@
+* {
+  /* *asterisco significa seletor universal - 
+  aqui tiramos margin e padding padrões do navegador de todos os elementos */
+  margin: 0;
+  padding: 0;
+  /*a medida do tamanho da caixa através da medida da borda*/
+  box-sizing: border-box;
+
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-star.svg);
+
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.1);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+
+
+body {
+  /*
+background-image: url(./assets/bg-mobile.jpg);
+background-repeat: no-repeat;
+
+/*eixo X e Y
+background-position: top center;
+
+/*cobrir toda a área visível 
+background-size: cover;
+
+/*agrupando tudo acima aqui abaixo 
+sintaxe: background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  border: 1px solid rgb(132, 255, 0);
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#perfil {
+  text-align: center;
+  padding: 24px;
+}
+
+#perfil img {
+  border-radius: 100%;
+  width: 112px;
+}
+
+#perfil p {
+  /*peso da fonte*/
+  font-weight: 500;
+  /*altura de linha*/
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*Switch */
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /*alinhamento do botao no slider */
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+/* links*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* coloca espaço entre os elementos */
+  padding: 24px 0;
+  ;
+
+}
+
+/*li é display block - ocupa o tamanho do container
+/a (link) é inline - ocupa o elemento*/
+ul li a {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/*pseido-se;ector */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+
+}
+
+#icones {
+  display: flex;
+
+
+  padding: 24px 0;
+  justify-content: center;
+
+  font-size: 24px;
+}
+
+#icones a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#icones a:hover {
+  background: var(--highlight-color);
+  padding: 15px;
+
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  color: var(--text-color);
+
+}
