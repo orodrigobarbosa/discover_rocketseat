@@ -51,7 +51,6 @@ sintaxe: background: color image repeat position/size */
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
-
 }
 
 #container {
