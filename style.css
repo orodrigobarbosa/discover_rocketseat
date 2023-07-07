@@ -5,7 +5,6 @@
   padding: 0;
   /*a medida do tamanho da caixa através da medida da borda*/
   box-sizing: border-box;
-
 }
 
 :root {
@@ -16,7 +15,6 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-star.svg);
-
 }
 
 .light {
@@ -28,8 +26,6 @@
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
 }
-
-
 
 body {
   /*
@@ -101,11 +97,11 @@ body * {
   top: 50%;
   transform: translateY(-50%);
 
+  animation: slide-out 0.2s;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -117,7 +113,6 @@ body * {
   border-radius: 9999px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-
 }
 
 /* links*/
@@ -128,14 +123,11 @@ ul {
   gap: 10px;
   /* coloca espaço entre os elementos */
   padding: 24px 0;
-  ;
-
 }
 
 /*li é display block - ocupa o tamanho do container
 /a (link) é inline - ocupa o elemento*/
 ul li a {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,7 +136,6 @@ ul li a {
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
-
 
   text-decoration: none;
   font-weight: 500;
@@ -155,12 +146,10 @@ ul li a {
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
-
 }
 
 #icones {
   display: flex;
-
 
   padding: 24px 0;
   justify-content: center;
@@ -180,7 +169,6 @@ ul li a:hover {
 #icones a:hover {
   background: var(--highlight-color);
   padding: 15px;
-
 }
 
 footer {
@@ -188,15 +176,34 @@ footer {
   text-align: center;
   font-style: normal;
   color: var(--text-color);
-
 }
 
 /*MEDIA QUERIES */
 @media (min-width: 700px) {
-  :root { --bg-url: url(./assets/bg-desktop.jpg);
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
   }
 
-  .light { 
+  .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* Suavização do slide */
+@keyframes slide-in {
+  from {
+    left: o;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
